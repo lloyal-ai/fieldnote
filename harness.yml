@@ -1,0 +1,27 @@
+targets: [cli, desktop, web]
+
+model:
+  llm:
+    id: qwen3.5-4b
+    context: 32768
+    branches: 5
+  reranker:
+    id: qwen3-reranker-0.6b-q8
+  vision: {}
+  transcription:
+    id: qwen3-asr-0.6b-q8
+
+sources:
+  outputDir: reports
+
+defaults:
+  effort: low
+  guards:
+    url_dedup:
+      scope: cohort
+    query_dedup:
+      scope: cohort
+
+ship:
+  icon: build/icon.icns
+  id: org.lloyal.fieldnote

@@ -1,0 +1,841 @@
+{
+ "tabs": [
+  {
+   "tab": 0,
+   "readyMs": 7079,
+   "probe": "installed",
+   "before": {
+    "freePct": 73,
+    "swapMb": 8860.19,
+    "serveRssMb": 94
+   },
+   "after": {
+    "freePct": 7,
+    "swapMb": 9635.5,
+    "serveRssMb": 6604
+   },
+   "hostRssMb": 6616,
+   "heapMb": 18
+  }
+ ],
+ "runs": [
+  {
+   "workers": 1,
+   "residentTabs": 1,
+   "wallMs": [
+    363752
+   ],
+   "aborted": null,
+   "series": [
+    [
+     {
+      "t": 10257,
+      "frames": 361,
+      "produce": 115,
+      "producePerS": 11.5,
+      "charsPerS": 53,
+      "complete": 0,
+      "synth": 0,
+      "research": 0,
+      "failed": 0,
+      "hostCpu": 5,
+      "hostRssMb": 6836,
+      "sysMemUsedMb": 14948,
+      "kv": [
+       1758,
+       16384
+      ],
+      "heapMb": 25,
+      "longTasks": 4,
+      "worstLongTask": 142,
+      "frameGaps": 3
+     },
+     {
+      "t": 20387,
+      "frames": 701,
+      "produce": 224,
+      "producePerS": 10.6,
+      "charsPerS": 48,
+      "complete": 0,
+      "synth": 0,
+      "research": 0,
+      "failed": 1,
+      "hostCpu": 0,
+      "hostRssMb": 6626,
+      "sysMemUsedMb": 14734,
+      "kv": [
+       0,
+       16384
+      ],
+      "heapMb": 29,
+      "longTasks": 5,
+      "worstLongTask": 142,
+      "frameGaps": 4
+     },
+     {
+      "t": 30482,
+      "frames": 986,
+      "produce": 383,
+      "producePerS": 15.9,
+      "charsPerS": 76,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6664,
+      "sysMemUsedMb": 14710,
+      "kv": [
+       2804,
+       16384
+      ],
+      "heapMb": 23,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 40612,
+      "frames": 1666,
+      "produce": 751,
+      "producePerS": 36.1,
+      "charsPerS": 173,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 4,
+      "hostRssMb": 6745,
+      "sysMemUsedMb": 14741,
+      "kv": [
+       3175,
+       16384
+      ],
+      "heapMb": 29,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 50674,
+      "frames": 1973,
+      "produce": 909,
+      "producePerS": 15.8,
+      "charsPerS": 76,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 3,
+      "hostRssMb": 6719,
+      "sysMemUsedMb": 14687,
+      "kv": [
+       6214,
+       16384
+      ],
+      "heapMb": 31,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 60744,
+      "frames": 2383,
+      "produce": 1108,
+      "producePerS": 19.7,
+      "charsPerS": 99,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 4,
+      "hostRssMb": 6824,
+      "sysMemUsedMb": 14888,
+      "kv": [
+       7936,
+       16384
+      ],
+      "heapMb": 29,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 70903,
+      "frames": 2779,
+      "produce": 1279,
+      "producePerS": 16.8,
+      "charsPerS": 73,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6693,
+      "sysMemUsedMb": 14579,
+      "kv": [
+       8227,
+       16384
+      ],
+      "heapMb": 26,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 80991,
+      "frames": 3287,
+      "produce": 1548,
+      "producePerS": 26.3,
+      "charsPerS": 109,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6697,
+      "sysMemUsedMb": 14709,
+      "kv": [
+       8886,
+       16384
+      ],
+      "heapMb": 47,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 91077,
+      "frames": 3982,
+      "produce": 1965,
+      "producePerS": 41.4,
+      "charsPerS": 172,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6700,
+      "sysMemUsedMb": 14680,
+      "kv": [
+       9303,
+       16384
+      ],
+      "heapMb": 32,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 101190,
+      "frames": 4642,
+      "produce": 2361,
+      "producePerS": 39.2,
+      "charsPerS": 167,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 3,
+      "hostRssMb": 6689,
+      "sysMemUsedMb": 14617,
+      "kv": [
+       9699,
+       16384
+      ],
+      "heapMb": 25,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 111281,
+      "frames": 5117,
+      "produce": 2646,
+      "producePerS": 28.2,
+      "charsPerS": 122,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6691,
+      "sysMemUsedMb": 14707,
+      "kv": [
+       9984,
+       16384
+      ],
+      "heapMb": 39,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 121369,
+      "frames": 5607,
+      "produce": 2940,
+      "producePerS": 29.1,
+      "charsPerS": 131,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6691,
+      "sysMemUsedMb": 14664,
+      "kv": [
+       10278,
+       16384
+      ],
+      "heapMb": 30,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 6
+     },
+     {
+      "t": 131468,
+      "frames": 6074,
+      "produce": 3219,
+      "producePerS": 27.6,
+      "charsPerS": 124,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6684,
+      "sysMemUsedMb": 14885,
+      "kv": [
+       10560,
+       16384
+      ],
+      "heapMb": 51,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 7
+     },
+     {
+      "t": 141558,
+      "frames": 6609,
+      "produce": 3535,
+      "producePerS": 31.3,
+      "charsPerS": 130,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 1,
+      "hostCpu": 2,
+      "hostRssMb": 6700,
+      "sysMemUsedMb": 14656,
+      "kv": [
+       8135,
+       16384
+      ],
+      "heapMb": 28,
+      "longTasks": 7,
+      "worstLongTask": 142,
+      "frameGaps": 7
+     },
+     {
+      "t": 151676,
+      "frames": 7282,
+      "produce": 3926,
+      "producePerS": 38.7,
+      "charsPerS": 187,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 3,
+      "hostRssMb": 6762,
+      "sysMemUsedMb": 14972,
+      "kv": [
+       7724,
+       16384
+      ],
+      "heapMb": 22,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 161767,
+      "frames": 7898,
+      "produce": 4234,
+      "producePerS": 30.4,
+      "charsPerS": 113,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6731,
+      "sysMemUsedMb": 14907,
+      "kv": [
+       8032,
+       16384
+      ],
+      "heapMb": 25,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 171849,
+      "frames": 8429,
+      "produce": 4436,
+      "producePerS": 20,
+      "charsPerS": 66,
+      "complete": 0,
+      "synth": 0,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6694,
+      "sysMemUsedMb": 14903,
+      "kv": [
+       4731,
+       16384
+      ],
+      "heapMb": 53,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 181932,
+      "frames": 8951,
+      "produce": 4606,
+      "producePerS": 16.8,
+      "charsPerS": 55,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6692,
+      "sysMemUsedMb": 14671,
+      "kv": [
+       794,
+       16384
+      ],
+      "heapMb": 31,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 192010,
+      "frames": 8997,
+      "produce": 4620,
+      "producePerS": 1.4,
+      "charsPerS": 7,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 0,
+      "hostRssMb": 6666,
+      "sysMemUsedMb": 14677,
+      "kv": [
+       5927,
+       16384
+      ],
+      "heapMb": 48,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 202088,
+      "frames": 9896,
+      "produce": 4920,
+      "producePerS": 29.7,
+      "charsPerS": 119,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6690,
+      "sysMemUsedMb": 14693,
+      "kv": [
+       6226,
+       16384
+      ],
+      "heapMb": 29,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 212171,
+      "frames": 10753,
+      "produce": 5206,
+      "producePerS": 28.3,
+      "charsPerS": 119,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6680,
+      "sysMemUsedMb": 14576,
+      "kv": [
+       6512,
+       16384
+      ],
+      "heapMb": 46,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 222279,
+      "frames": 11322,
+      "produce": 5395,
+      "producePerS": 18.6,
+      "charsPerS": 94,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6690,
+      "sysMemUsedMb": 14681,
+      "kv": [
+       6702,
+       16384
+      ],
+      "heapMb": 33,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 232386,
+      "frames": 11874,
+      "produce": 5579,
+      "producePerS": 18.1,
+      "charsPerS": 90,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6687,
+      "sysMemUsedMb": 14663,
+      "kv": [
+       6886,
+       16384
+      ],
+      "heapMb": 30,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 242472,
+      "frames": 12433,
+      "produce": 5766,
+      "producePerS": 18.5,
+      "charsPerS": 91,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6686,
+      "sysMemUsedMb": 14634,
+      "kv": [
+       7072,
+       16384
+      ],
+      "heapMb": 26,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 252560,
+      "frames": 12973,
+      "produce": 5946,
+      "producePerS": 17.9,
+      "charsPerS": 88,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6717,
+      "sysMemUsedMb": 14980,
+      "kv": [
+       7252,
+       16384
+      ],
+      "heapMb": 35,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 262643,
+      "frames": 13528,
+      "produce": 6131,
+      "producePerS": 18.3,
+      "charsPerS": 96,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6688,
+      "sysMemUsedMb": 14918,
+      "kv": [
+       7437,
+       16384
+      ],
+      "heapMb": 41,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 272874,
+      "frames": 14056,
+      "produce": 6307,
+      "producePerS": 17.2,
+      "charsPerS": 97,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6675,
+      "sysMemUsedMb": 14908,
+      "kv": [
+       7613,
+       16384
+      ],
+      "heapMb": 42,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 282970,
+      "frames": 14605,
+      "produce": 6490,
+      "producePerS": 18.1,
+      "charsPerS": 84,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6681,
+      "sysMemUsedMb": 14733,
+      "kv": [
+       7796,
+       16384
+      ],
+      "heapMb": 29,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 293063,
+      "frames": 15145,
+      "produce": 6670,
+      "producePerS": 17.8,
+      "charsPerS": 85,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6685,
+      "sysMemUsedMb": 14880,
+      "kv": [
+       7976,
+       16384
+      ],
+      "heapMb": 37,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 303155,
+      "frames": 15709,
+      "produce": 6858,
+      "producePerS": 18.6,
+      "charsPerS": 85,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6681,
+      "sysMemUsedMb": 14816,
+      "kv": [
+       8164,
+       16384
+      ],
+      "heapMb": 49,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 313248,
+      "frames": 16258,
+      "produce": 7041,
+      "producePerS": 18.1,
+      "charsPerS": 106,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6685,
+      "sysMemUsedMb": 14930,
+      "kv": [
+       8347,
+       16384
+      ],
+      "heapMb": 55,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 323330,
+      "frames": 16810,
+      "produce": 7225,
+      "producePerS": 18.3,
+      "charsPerS": 94,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6691,
+      "sysMemUsedMb": 14696,
+      "kv": [
+       8531,
+       16384
+      ],
+      "heapMb": 36,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 333410,
+      "frames": 17338,
+      "produce": 7401,
+      "producePerS": 17.5,
+      "charsPerS": 95,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 2,
+      "hostRssMb": 6687,
+      "sysMemUsedMb": 14881,
+      "kv": [
+       8707,
+       16384
+      ],
+      "heapMb": 46,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 343526,
+      "frames": 17878,
+      "produce": 7581,
+      "producePerS": 17.8,
+      "charsPerS": 64,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6684,
+      "sysMemUsedMb": 14738,
+      "kv": [
+       8887,
+       16384
+      ],
+      "heapMb": 47,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 353628,
+      "frames": 18352,
+      "produce": 7736,
+      "producePerS": 15.3,
+      "charsPerS": 50,
+      "complete": 0,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 1,
+      "hostRssMb": 6738,
+      "sysMemUsedMb": 14840,
+      "kv": [
+       9043,
+       16384
+      ],
+      "heapMb": 49,
+      "longTasks": 8,
+      "worstLongTask": 142,
+      "frameGaps": 8
+     },
+     {
+      "t": 363750,
+      "frames": 18364,
+      "produce": 7736,
+      "producePerS": 0,
+      "charsPerS": 0,
+      "complete": 1,
+      "synth": 1,
+      "research": 1,
+      "failed": 2,
+      "hostCpu": 0,
+      "hostRssMb": 6652,
+      "sysMemUsedMb": 14556,
+      "kv": [
+       9043,
+       16384
+      ],
+      "heapMb": 23,
+      "longTasks": 9,
+      "worstLongTask": 142,
+      "frameGaps": 9
+     }
+    ]
+   ]
+  }
+ ],
+ "guard": {
+  "minFreePct": 10,
+  "maxSwapGrowthMb": 2500
+ },
+ "start": {
+  "freePct": 72,
+  "swapMb": 8868.19,
+  "serveRssMb": 94
+ },
+ "end": {
+  "freePct": 9,
+  "swapMb": 9985.06,
+  "serveRssMb": 6650
+ }
+}

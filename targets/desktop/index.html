@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: attachment:; img-src 'self' data: blob: attachment:; frame-src attachment:; media-src attachment: blob:"
+    />
+    <title>fieldnote</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #F6F6F3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./view.tsx"></script>
+  </body>
+</html>

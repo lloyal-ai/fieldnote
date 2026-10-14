@@ -1,0 +1,15 @@
+{
+  "name": "lloyal/web",
+  "version": "3.0.0",
+  "entry": "lloyal__web-3.0.0.tgz",
+  "signature": "SZ/NJBCAXNA46vq2VBOKVBxhLogy2IfWTiRbhInXpjCYQG3wloajOC/sS2zybJxOuQOed3XXhymiBTIsZrbpBw==",
+  "integrity": "sha512-foUsIvIm9xezU8on+KGjDXzHklLvfjoZdNu4infAdKlxZtLJt8n1qS5GbOsqHoFSnh6Zu/ccyvkcYmXCEowcMA==",
+  "publisherKeyId": "lloyal-platform-2026-q2",
+  "sizeBytes": 28628,
+  "peerDependencies": {
+    "@lloyal-labs/lloyal-agents": ">=7.0.0-0 <8.0.0",
+    "@lloyal-labs/rig": ">=6.0.0-0 <7.0.0",
+    "effection": "^4.0.2"
+  },
+  "importName": "@lloyal-labs/web-ability"
+}

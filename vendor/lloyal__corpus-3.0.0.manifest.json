@@ -1,0 +1,16 @@
+{
+  "name": "lloyal/corpus",
+  "version": "3.0.0",
+  "entry": "lloyal__corpus-3.0.0.tgz",
+  "signature": "VGNj/dRjOZqHb/dgU+R78Vwx7WWL7lPY1ZCy6XBzHEYDNPakMLRGbqhkRVW/VKr0qioki+S/cHQsQY91YbO/Ag==",
+  "integrity": "sha512-PEEjh0j2bBeSG6yiMAq2yTNyNi2u5Yb/YZHFkXJrq7KUrMdr3LQTaaISFigrhkeWlnEupvu49mjaKjiXa8GUXA==",
+  "publisherKeyId": "lloyal-platform-2026-q2",
+  "sizeBytes": 20868,
+  "peerDependencies": {
+    "@lloyal-labs/lloyal-agents": ">=7.0.0-0 <8.0.0",
+    "@lloyal-labs/lloyal.node": ">=4.0.0-0 <5.0.0",
+    "@lloyal-labs/rig": ">=6.0.0-0 <7.0.0",
+    "effection": "^4.0.2"
+  },
+  "importName": "@lloyal-labs/corpus-ability"
+}
