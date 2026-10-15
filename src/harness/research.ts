@@ -14,6 +14,7 @@ import type { Operation } from "effection";
 import type { Branch } from "@lloyal-labs/sdk";
 import {
   Ctx,
+  SpawnRefused,
   agentPool,
   useAgent,
   chain,
@@ -55,7 +56,7 @@ import type {
 import { BUDGETS } from "./budgets.js";
 import type { Effort } from "./budgets.js";
 import { prompt, render } from "./prompts.js";
-import type { CompleteData, DocId, Mode, WorkflowEvent } from "../protocol.js";
+import type { CompleteData, DocId, Mode, Unanswered, Unsettled, WorkflowEvent } from "../protocol.js";
 
 /** An ask, as the brief hands it over. */
 export type Inputs = {
@@ -82,6 +83,8 @@ export type Stats = { ctxPct: number; ctxPos: number; ctxTotal: number };
  *  none. `stats` and `complete` are what the run bar and the dev pane are told as the run ends. */
 export type Written = {
   answer: string | null;
+  unanswered?: Unanswered;
+  unsettled?: Unsettled;
   inquiries: { task: string; findings: string }[];
   stats: Stats;
   complete: CompleteData;
@@ -106,7 +109,7 @@ export type Stages = {
  *  spine, so findings the strategy committed there are ATTENDED already and saying them again costs their length
  *  twice; findings it did not commit are nowhere the agent can see unless the prompt carries them. That depends on
  *  the strategy that ran, never on the shape the reader chose. */
-export type Evidence = { findings: readonly string[]; attended: boolean };
+export type Evidence = { findings: readonly string[]; onSpine: readonly boolean[] };
 
 /** One task's spawn, made for the strategy that asks. `beside` says its siblings work at the same time, which
  *  is what the agent is told about them. */
@@ -316,15 +319,12 @@ export function* settle(
   yield* wire.send({ type: "synthesize:start" });
   const at = timer();
   // Findings the spine holds are read from it; findings it does not are given in the prompt, one block per task.
-  const told = evidence.attended
-    ? prompt("synthesize", { query: ask.text })
-    : prompt("synthesize-flat", {
-        query: ask.text,
-        findings: evidence.findings.map((body, i) => ({
-          task: plan.tasks[i]?.description ?? `task ${i + 1}`,
-          body: body.trim(),
-        })),
-      });
+  const findings = evidence.findings.map((body, i) => ({ task: plan.tasks[i]?.description ?? `task ${i + 1}`, body: body.trim() }));
+  // What the spine holds is read from it, and only what it does not is said beside the question; with nothing on
+  // the spine (a survey commits none), every finding is handed over as the fan-in it is.
+  const told = evidence.onSpine.some(Boolean)
+    ? prompt("synthesize", { query: ask.text, findings: findings.filter((f, i) => f.body && !evidence.onSpine[i]) })
+    : prompt("synthesize-flat", { query: ask.text, findings });
   const agent = yield* useAgent({
     ...told,
     parent: spine,
@@ -479,30 +479,41 @@ export function* write(
         tokens: 0,
         timeMs: 0,
       };
+      let unsettled: Unsettled | undefined;
       // An answer with no text is no answer, whichever path produced it: the view says so; nothing is invented.
       if (tasks.length === 1)
         text = found[0].trim() || null; // one inquiry is its own answer
       else if (found.every((f) => !f.trim()))
         text = null; // nothing to settle
       else {
-        // Attended only if EVERY finding there is was committed — each one, not each distinct text: one that was
-        // not would be lost to a prompt that supplies none, so anything short of all of them is handed over whole.
-        const said = found.filter((f) => f.trim());
-        const attended = said.every(
-          (f) =>
-            (strategy.committed.get(f) ?? 0) >=
-            said.filter((g) => g === f).length,
-        );
-        const r = yield* s.settle(spine, ask, plan, {
-          findings: found,
-          attended,
+        // Which findings the spine holds: each one, not each distinct text. Two inquiries can say the same words,
+        // and only as many as were committed are there to read; the rest are handed over beside the question.
+        const left = new Map(strategy.committed);
+        const onSpine = found.map((f) => {
+          const held = left.get(f) ?? 0;
+          if (!f.trim() || held === 0) return false;
+          left.set(f, held - 1);
+          return true;
         });
-        text = r.answer.trim() ? r.answer : null;
-        settled = r;
+        try {
+          const r = yield* s.settle(spine, ask, plan, { findings: found, onSpine });
+          text = r.answer.trim() ? r.answer : null;
+          settled = r;
+        } catch (e) {
+          // The inquiries finished; only the agent that settles them found no room. What they found stands as the
+          // answer, each under its task, and the answer says it was not settled. Any other failure fails the run.
+          if (!(e instanceof SpawnRefused && e.reason === "pressure_init")) throw e;
+          text = found.flatMap((f, i) => (f.trim() ? [`## ${tasks[i].description}\n\n${f.trim()}`] : [])).join("\n\n");
+          unsettled = "no_room";
+        }
       }
 
+      // Every inquiry refused for want of room: nothing was searched, and the reader is told so, not "nothing found".
+      const noRoom = text === null && tasks.every((_, i) => pool.byKey(taskKey(i))?.failed === "pressure_init");
       return {
         answer: text,
+        ...(noRoom ? { unanswered: "no_room" as const } : {}),
+        ...(unsettled ? { unsettled } : {}),
         inquiries: tasks.map((task, i) => ({
           task: task.description,
           findings: found[i],

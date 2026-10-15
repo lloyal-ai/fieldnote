@@ -108,7 +108,7 @@ export function emptyDoc(): DocState {
     roster: emptyRoster(),
     reconAgentIds: [],
     researchAgentCount: 0, reports: null,
-    synth: EMPTY_SYNTH, answer: null, exchanges: [], ask: null, askAttachments: [],
+    synth: EMPTY_SYNTH, answer: null, unanswered: null, unsettled: null, exchanges: [], ask: null, askAttachments: [],
     paused: false, closing: false, closedEarly: false, stopped: false,
     pipelineElapsedMs: 0, pipelineResumedAt: null,
   };
@@ -157,6 +157,7 @@ function settledDoc(ev: Extract<WorkflowEvent, { type: 'doc' }>): DocState {
     runEffort: ev.effort,
     direct: ev.direct,
     answer: ev.answer,
+    unsettled: ev.unsettled ?? null,
     exchanges: ev.exchanges,
   };
 }
@@ -487,12 +488,15 @@ function docReduce(doc: DocState, ev: WorkflowEvent): DocState {
       if (doc.ask !== null) {
         return {
           ...doc,
-          exchanges: [...doc.exchanges, { question: doc.ask, body: ev.text, attachments: doc.askAttachments }],
+          exchanges: [...doc.exchanges, {
+            question: doc.ask, body: ev.text, attachments: doc.askAttachments,
+            ...(ev.unanswered ? { unanswered: ev.unanswered } : {}),
+          }],
           ask: null,
           askAttachments: [],
         };
       }
-      return { ...doc, answer: ev.text };
+      return { ...doc, answer: ev.text, unanswered: ev.unanswered ?? null, unsettled: ev.unsettled ?? null };
 
     case 'complete': {
       // Settled — bank the last active slice and freeze the timer.
