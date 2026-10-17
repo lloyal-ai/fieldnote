@@ -95,7 +95,7 @@ export function writeBrief(dir: string, record: BriefRecord, opts: { exchange: b
   const doc = `# ${record.query}\n\n${meta}\n\n${answerText(record.answer.trim(), record.unsettled)}\n${annexures}`;
   const name = opts.exchange ? `exchange-${reserveName(dir, "exchange", ".json", 1)}` : "report";
   fs.writeFileSync(path.join(dir, `${name}.md`), doc, "utf8");
-  fs.writeFileSync(path.join(dir, `${name}.json`), JSON.stringify(record, null, 2) + "\n", "utf8");
+  writeRecordFile(path.join(dir, `${name}.json`), record);
 }
 
 /** Create `<dir>/<prefix>-<n><ext>` for the first free n ≥ `from`, exclusively. */
@@ -108,6 +108,14 @@ function reserveName(dir: string, prefix: string, ext: string, from: number): nu
       if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
     }
   }
+}
+
+/** A record reaches its name whole or not at all: written beside it and renamed into place, so a write that dies
+ *  midway (a quit lands wherever it lands) leaves the last whole record, and the folder it keeps, as they were. */
+function writeRecordFile(file: string, record: BriefRecord): void {
+  const staging = `${file}.tmp`;
+  fs.writeFileSync(staging, JSON.stringify(record, null, 2) + "\n", "utf8");
+  fs.renameSync(staging, file);
 }
 
 /** The record at a confined path, or null where there is none to read. */
@@ -158,6 +166,8 @@ export interface Library {
   reserve(): DocId;
   /** The folder goes, unless a brief settled in it (its record reads); the record stops writing for it. */
   release(id: DocId): void;
+  /** What the run on `id` has filed so far, as the answer it would make, or null when it has filed nothing. */
+  asWritten(id: DocId): string | null;
   /** The record starts: a first report, or a thread beside a settled one. */
   begin(id: DocId, ask: Inputs, opts: { warm: boolean }): void;
   /** One inquiry's findings, as its report returns: filed as an annexure now, so a run that ends any other way
@@ -351,6 +361,10 @@ export function* openLibrary(
       return id;
     },
     release,
+    // What the disk holds of the run so far: a first report's record, written as its findings were filed. An
+    // exchange has no record of its own until it completes, so a stop leaves nothing of it to say; the brief it
+    // was asked into stands.
+    asWritten: (id) => (record?.docId === id && !record.appending && record.filed.size > 0 ? findingsAsWritten(soFar(record).inquiries) : null),
     begin(id, ask, { warm }) {
       const folder = path.join(dir(), id);
       // A brief whose run was stopped before its report lost its folder with the stop but not its place on the
@@ -372,7 +386,7 @@ export function* openLibrary(
       const n = writeAnnexure(r.dir, r.ordinalBase + index + 1, task, findings);
       r.filed.set(index, { task, findings, annexure: n });
       // An exchange lands beside a settled brief, whose record stands; a first report's record is the run's own.
-      if (!r.appending) fs.writeFileSync(path.join(r.dir, RECORD), JSON.stringify(soFar(r), null, 2) + "\n", "utf8");
+      if (!r.appending) writeRecordFile(path.join(r.dir, RECORD), soFar(r));
     },
     written(id, w) { if (record?.docId === id) record.written = w; },
     read,
@@ -392,6 +406,7 @@ export function* openLibrary(
     },
     *settled(id) {
       if (!keptIn(id)) return release(id);   // nothing kept in it: the run found nothing, or its record never landed
+      if (record?.docId === id) record = null;   // a run that settled without `complete` (stopped with findings) is over too
       reserved.delete(id);
       yield* reindex();
     },
