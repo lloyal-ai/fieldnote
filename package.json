@@ -85,7 +85,7 @@
     "abilities": [
       "lloyal/corpus@3.0.0",
       "lloyal/web@3.0.0",
-      "lloyal/documents@0.3.0"
+      "lloyal/documents@0.3.1"
     ]
   }
 }
