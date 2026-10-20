@@ -39,14 +39,14 @@
     "@fontsource-variable/geist-mono": "^5.3.0",
     "@inkjs/ui": "^2.0.0",
     "@lloyal-labs/binding": "^0.3.0",
-    "@lloyal-labs/corpus-ability": "file:vendor/lloyal__corpus-3.0.0.tgz",
+    "@lloyal-labs/corpus-ability": "file:vendor/lloyal__corpus-3.0.1.tgz",
     "@lloyal-labs/desktop": "^0.4.0",
     "@lloyal-labs/dev-tools": "^0.6.0",
     "@lloyal-labs/documents-ability": "file:vendor/lloyal__documents-0.3.1.tgz",
-    "@lloyal-labs/lloyal-agents": "^7.1.0",
+    "@lloyal-labs/lloyal-agents": "^7.2.0",
     "@lloyal-labs/lloyal.node": "^4.1.0",
     "@lloyal-labs/media": "^0.3.0",
-    "@lloyal-labs/rig": "^6.1.0",
+    "@lloyal-labs/rig": "^6.1.1",
     "@lloyal-labs/sdk": "^5.1.0",
     "@lloyal-labs/ui": "^0.3.0",
     "@lloyal-labs/web-ability": "file:vendor/lloyal__web-3.0.0.tgz",
@@ -83,7 +83,7 @@
       "web"
     ],
     "abilities": [
-      "lloyal/corpus@3.0.0",
+      "lloyal/corpus@3.0.1",
       "lloyal/web@3.0.0",
       "lloyal/documents@0.3.1"
     ]
