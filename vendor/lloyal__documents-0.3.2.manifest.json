@@ -1,0 +1,16 @@
+{
+  "name": "lloyal/documents",
+  "version": "0.3.2",
+  "entry": "lloyal__documents-0.3.2.tgz",
+  "signature": "G2WPDE5SLPUA+P/3soTyB16IVt7ElUz+Hh45LYtaM4SY65z0Xvo5aVd63189+PGht+dR70vJON8Am9XqOVhzCg==",
+  "integrity": "sha512-SwmZUr6EPamvA0eTPxrbMQJkvicNAxSkXt/+TlbD6QOuo4qri6MyoypJzNkw9+QwGlpttPHo71O+elcBXRlWrw==",
+  "publisherKeyId": "lloyal-platform-2026-q2",
+  "sizeBytes": 24479,
+  "peerDependencies": {
+    "@lloyal-labs/lloyal-agents": ">=7.0.0-0 <8.0.0",
+    "@lloyal-labs/media": ">=0.3.0-0 <0.5.0",
+    "@lloyal-labs/rig": ">=6.0.0-0 <8.0.0",
+    "effection": "^4.0.2"
+  },
+  "importName": "@lloyal-labs/documents-ability"
+}

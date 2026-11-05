@@ -38,18 +38,17 @@
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
     "@inkjs/ui": "^2.0.0",
-    "@lloyal-labs/binding": "^0.3.0",
-    "@lloyal-labs/corpus-ability": "file:vendor/lloyal__corpus-3.0.1.tgz",
-    "@lloyal-labs/desktop": "^0.4.0",
-    "@lloyal-labs/dev-tools": "^0.6.0",
-    "@lloyal-labs/documents-ability": "file:vendor/lloyal__documents-0.3.1.tgz",
-    "@lloyal-labs/lloyal-agents": "^7.2.0",
-    "@lloyal-labs/lloyal.node": "^4.1.0",
-    "@lloyal-labs/media": "^0.3.0",
-    "@lloyal-labs/rig": "^6.1.1",
-    "@lloyal-labs/sdk": "^5.1.0",
-    "@lloyal-labs/ui": "^0.3.0",
-    "@lloyal-labs/web-ability": "file:vendor/lloyal__web-3.0.0.tgz",
+    "@lloyal-labs/binding": "^0.4.0",
+    "@lloyal-labs/corpus-ability": "file:vendor/lloyal__corpus-3.0.2.tgz",
+    "@lloyal-labs/desktop": "^0.4.1",
+    "@lloyal-labs/dev-tools": "^0.6.1",
+    "@lloyal-labs/documents-ability": "file:vendor/lloyal__documents-0.3.2.tgz",
+    "@lloyal-labs/lloyal-agents": "^7.3.0",
+    "@lloyal-labs/lloyal.node": "^4.2.0",
+    "@lloyal-labs/media": "^0.4.0",
+    "@lloyal-labs/rig": "^7.0.0",
+    "@lloyal-labs/sdk": "^5.2.0",
+    "@lloyal-labs/ui": "^0.4.0",
     "effection": "^4.1.0",
     "eta": "^4.6.0",
     "ink": "^7.1.1",
@@ -59,7 +58,8 @@
     "react-dom": "^19.2.0",
     "sharp": "^0.35.4",
     "yaml": "^2.9.0",
-    "zod": "^4.6.5"
+    "zod": "^4.6.5",
+    "@lloyal-labs/web-ability": "file:vendor/lloyal__web-3.0.1.tgz"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
@@ -83,9 +83,9 @@
       "web"
     ],
     "abilities": [
-      "lloyal/corpus@3.0.1",
-      "lloyal/web@3.0.0",
-      "lloyal/documents@0.3.1"
+      "lloyal/corpus@3.0.2",
+      "lloyal/web@3.0.1",
+      "lloyal/documents@0.3.2"
     ]
   }
 }
